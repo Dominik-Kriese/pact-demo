@@ -1,0 +1,43 @@
+{
+  "provider": {
+    "name": "UserProvider"
+  },
+  "consumer": {
+    "name": "UserConsumer"
+  },
+  "interactions": [
+    {
+      "description": "UserServiceApiPactTest valid user interaction",
+      "request": {
+        "method": "GET",
+        "path": "/users/0"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "permissions": [
+            "Admin",
+            "User"
+          ],
+          "name": "Max"
+        }
+      },
+      "providerStates": [
+        {
+          "name": "A user for the id 0 exists with name Max as Admin and User"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "4.1.7"
+    }
+  }
+}
